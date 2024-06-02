@@ -1,7 +1,4 @@
 <script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
 </script>
 
 <svelte:head>
@@ -10,22 +7,19 @@
 </svelte:head>
 
 <section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
+	<h1 class="logo">
+		myBooks
 	</h1>
+	<input />
 
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
+	<div class="buttons">
+		<button on:click={() => console.log("hola1")}>
+			Buscar MyBooks
+		</button>
+		<button on:click={() => console.log("hola2")}>
+			Quiero probar suerte
+		</button>
+	</div>
 </section>
 
 <style>
@@ -36,24 +30,21 @@
 		align-items: center;
 		flex: 0.6;
 	}
-
-	h1 {
-		width: 100%;
+	.logo {
+		font-size: 10em;
+		margin: 0;
+		margin-bottom: 0.2em;
 	}
-
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
+	input {
+		width: 70%;
+		padding: 0.2em 0 0.2em 0.5em;
+		font-size: 1.5em;
+		margin-bottom: 1em;
 	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
+	.buttons {
+		margin-top: 0.3em;
+		display: flex;
+		flex-direction: row;
+		gap: 1em;
 	}
 </style>

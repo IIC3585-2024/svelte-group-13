@@ -7,7 +7,7 @@
 	<meta name="description" content="About this app" />
 </svelte:head>
 
-<PdfViewer url='https://download.library.lol/main/386000/410d6144e8e009357d3394af44585a0c/J.K.%20Rowling%2C%20Hiroko%20Matsuoka%20-%20Harry%20Potter%20and%20the%20Philosopher%27s%20Stone-Static%20Mountain%20Company%20%282003%29.pdf' />
+<PdfViewer url='https://raw.githubusercontent.com/IIC3585-2024/svelte-group-13/main/libro/harry-potter-y-la-camara-secreta-2-medio.pdf' />
 
 <div class="text-column">
 	<h1>About this app</h1>
