@@ -2,6 +2,35 @@
 	import Navbar from './Navbar.svelte';
 	import github from '$lib/images/github.svg';
 	import './styles.css';
+	import { userIsLoggedIn, user } from '@stores';
+	import { onAuthStateChanged, signOut } from 'firebase/auth';
+	import { auth } from '@firebaseconf';
+    import { onMount } from 'svelte';
+	import {goto} from '$app/navigation';
+	onMount(() => {
+		onAuthStateChanged(auth, (u) => {
+			console.log("XD",$userIsLoggedIn)
+			user.set(u);
+			userIsLoggedIn.set(!!u);
+			console.log("XD2",$user)
+			if (!$userIsLoggedIn) {
+				goto('/login')
+			}
+		});
+	});
+	//user.known.then(()=>{console.log($user)})
+
+	/*
+	onAuthStateChanged(auth, (u) => {
+		console.log(user.known);
+		//user.set(u);
+		//userIsLoggedIn.set(!!u);
+		//$user = u;
+		//console.log(u)
+		//console.log($user)
+		//$userIsLoggedIn = !!u;
+	});//*/
+
 </script>
 
 <div class="app">

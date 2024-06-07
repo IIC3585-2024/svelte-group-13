@@ -22,6 +22,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"firebase": "^10.12.2",
 		"svelte-pdf": "^1.0.20"
 	}
 }
